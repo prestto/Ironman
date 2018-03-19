@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"d7ead42b46","applicationID":"19987964","transactionName":"NQQDMUBTVxECBUBfDgxOIDZiHVUDGglBQhJNDAAMXBxYERMe","queueTime":0,"applicationTime":583,"ttGuid":"9DB0F832D6194D4","agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAIFVlRRGwIJXVlVDgcD"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<meta content="NOYDIR" name="ROBOTS"/>
+<meta content="NOODP" name="ROBOTS"/>
+<meta content="f7216b02e68cc8bf061bb27f59b0dd0f" name="p:domain_verify"/>
+<meta content="C0SboseTtSt6vFpE98Yq1Ur2IVGgnaB9bRkIqHGDNFw" name="google-site-verification"/>
+<meta content="1510104590" property="twitter:account_id"/>
+<meta content="49102455,584780102,748220376,1134223497,100000369144587,100000475753312" property="fb:admins"/>
+<meta content="NOINDEX, NOFOLLOW" name="Googlebot-News"/>
+<meta content="{0} Results" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx" property="og:url"/>
+<meta content="" property="og:image"/>
+<meta content="IRONMAN.com" property="og:site_name"/>
+<meta content="" property="og:description"/>
+<title>IRONMAN UK Results - IRONMAN Official Site | IRONMAN triathlon 140.6 &amp; 70.3</title>
+<link href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css"/>
+<link href="http://eu.ironman.com/media/favicon.png" rel="icon" type="image/png"/>
+<link href="http://eu.ironman.com/media/favicon.ico" rel="shortcut icon"/>
+<link href="http://eu.ironman.com/includes/cssbin/mini/ironman.0.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/includes/cssbin/ironman.min.css?v=8" media="all" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="http://eu.ironman.com/includes/cssbin/ie8.css" media="all" />
+	<![endif]-->
+<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="http://eu.ironman.com/includes/cssbin/ie7.css" media="all" />
+	<![endif]-->
+<link href="http://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet" type="text/css"/>
+<script src="http://eu.ironman.com/includes/jsbin/mini/ironman.2289597205456.js" type="text/javascript"></script>
+<script src="http://eu.ironman.com/system/javascript/feedback.aspx" type="text/javascript"></script>
+<!-- need this for all of the handlers used by the new IronFan section -->
+<script type="text/javascript">
+        var raceStartTime = "";
+        var raceStartTimeZone = "";
+        var raceStartTimeZoneAbbreviated = "";
+        var timezoneOffset = "";
+        var subEventId = "";
+        var domainServicesSecure = "https://services.ironman.com";
+        var domainServicesCached = "http://services-cdn.ironman.com";
+        
+
+        if (LiveMap === undefined) {
+            var LiveMap = {};
+        }
+        if (LiveMap.vars === undefined) {
+            LiveMap.vars = {};
+        }
+        LiveMap.vars.debugHandlebars = false;
+    </script>
+<script type="text/javascript">
+        var shareURL = "http%3a%2f%2feu.ironman.com%2ftriathlon%2fevents%2femea%2fironman%2fuk%2fresults.aspx";
+        var shareTitle = "%7b0%7d+Results";
+        var ord = Math.random() * 10000000000000000;
+        ord = Math.round(ord);
+        var dst = "True";
+        var availableLanguages = [];
+        var pageId = "88b6c5d99861460798f359f9b4d19784";
+        var currentLanguage = "en";
+        var directories = document.location.pathname.split("/");
+        if (directories.length > 1) {
+            if ((directories[1].length === 2) || ((directories[1].length === 5) && (directories[1].charAt(2) === "-"))) {
+                currentLanguage = directories[1];
+            }
+        }
+        //console.log("dir- " + directories);
+        //console.log("lang- " + currentLanguage);
+        var trackerUrl = "";
+    </script>
+<script type="text/javascript">
+        if (trackerUrl !== 'undefined' && trackerUrl.length > 0) {
+            $(window).load(function() {
+                initAjaxPopUp(trackerUrl);
+            });
+        }
+    </script>
+<script type="text/javascript">
+        var ga_accountID, ga_domain;
+        var host = location.host;
+
+        if (host == "beta.ironman.com" || host == "ironman.com" || host == "www.ironman.com" || host == "ap.ironman.com" || host == "asia.ironman.com" || host == "eu.ironman.com" || host == "m.ironman.com" || host == "m.ap.ironman.com" || host == "m.asia.ironman.com" || host == "m.eu.ironman.com") {
+            ga_accountID = 'UA-213900-2';
+            ga_domain = 'ironman.com';
+        } else if (host == 'www.velothon.com' || host == 'm.velothon.com'|| host == 'www.cyclassics-hamburg.de'|| host == 'm.cyclassics-hamburg.de'){
+            ga_accountID = 'UA-83220074-2';
+            ga_domain = 'velothon.com';
+        } else if( host == 'wft.ironman.com' || host == 'm.wft.ironman.com' || host == 'www.womenfortri.com' || host == 'm.womenfortri.com'){
+            ga_accountID = 'UA-83220074-1';
+            ga_domain = 'womenfortri.com';
+        } else {
+            ga_accountID = 'UA-34708665-1';
+            ga_domain = 'digitaria.com';
+        }
+
+        // for testing only, remove from production
+        //if (typeof console.log != "undefined") {
+        //console.log("account id= " + ga_accountID);
+        //}
+
+        var _gaq = _gaq || [];
+        
+        _gaq.push(['_setAccount', ga_accountID]);
+        _gaq.push(['_setDomainName', ga_domain]);
+        
+
+        // Updated custom variable tracking for Double Click data fields
+        _gaq.push(['_setCustomVar', 1, 'scTemplate', 'Event Results Sub Page', 3]);
+_gaq.push(['_setCustomVar', 2, 'scEvent', 'uk', 3]);
+_gaq.push(['_setCustomVar', 3, 'scTag', "Uk, Multi-Loop, Hilly", 3]);
+_gaq.push(['_setCustomVar', 4, 'Article Byline', '', 3]);
+
+
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+    </script>
+<!-- Start of Neustar Real User Measurements code -->
+<script type="text/javascript">
+        ns_rum = {};
+        var t_pagestart = new Date().getTime(), t_pageend;
+        ns_rum.init = function () {
+            t_pageend = new Date().getTime();
+            var s = document.createElement ('script'); s.id = 'rum';
+            s.type = 'text/javascript'; s.src = 'https://d2lo2tipcl3aii.cloudfront.net/C620CFB87B594673BEA261FF02820DF9/neustar.beacon.js';
+            document.getElementsByTagName('head')[0].appendChild(s);
+        }
+        window.addEventListener ? window.addEventListener('load', ns_rum.init, false) : window.attachEvent ? window.attachEvent('onload', ns_rum.init) : false;
+
+        ns_rum.errors = [];
+        ns_rum.ogErrorHandler = window.onerror;
+        window.onerror = function rumErrorHandler(msg, url, line){
+            ns_rum.errors.push({'url': url, 'line': line, 'msg': msg});
+            if(ns_rum.ogErrorHandler){ return ns_rum.ogErrorHandler(msg, url, line); }
+            return false;
+        }
+    </script>
+<!-- End of Neustar Real User Measurements code -->
+<!-- Start: Double Click Ad Code -->
+<script type="text/javascript">
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            (function () {
+                var gads = document.createElement('script');
+                gads.async = true;
+                gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') +
+                    '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+        </script>
+<script type="text/javascript">
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/4606835/IM_728x90_EMEA_uk', [728, 90], 'div-gpt-ad-1461707083').addService(googletag.pubads());
+googletag.defineSlot('/4606835/IM_300x90_EMEA_uk', [300, 90], 'div-gpt-ad-1461707084').addService(googletag.pubads());
+googletag.defineSlot('/4606835/IM_300x250_EMEA_uk', [300, 250], 'div-gpt-ad-47295637').addService(googletag.pubads());
+googletag.defineSlot('/4606835/IM_300x100_EMEA_uk', [300, 100], 'div-gpt-ad-1775542766').addService(googletag.pubads());
+
+                googletag.pubads().collapseEmptyDivs();
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().setTargeting("url", "http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx");
+googletag.pubads().setTargeting("scTemplate", "Event Results Sub Page");
+googletag.pubads().setTargeting("adUnit", "EMEA_uk");
+googletag.pubads().setTargeting("scEvent", "uk");
+googletag.pubads().setTargeting("scTag", ["Uk","Multi-Loop","Hilly"]);
+
+                googletag.enableServices();
+            });
+        </script>
+<!-- End: Double Click Ad Code -->
+<!--
+      IronFan - EasyXDM
+      =================
+    -->
+<!-- This should be changed so that it points to the minified version before use in production.-->
+<script src="/Includes/JsBin/easyXDM-2.4.19.3/easyXDM.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        // Update to point to your copy
+        easyXDM.DomHelper.requiresJSON("/includes/jsbin/easyXDM-2.4.19.3/json2.js");
+    </script>
+</head>
+<body class="layout3 eventLanding eventSubPage results">
+<!-- Google Tag Manager -->
+<noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-KK6278" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<script>    
+    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KK6278');</script>
+<!-- End Google Tag Manager -->
+<!-- Begin: eventCoverage -->
+<div class="eventCoverage">
+<div class="eventCoverageWrapper clear">
+<h3>Event Coverage</h3>
+<ul class="eventCoverageLocation">
+<li><a href="http://eu.ironman.com/triathlon/coverage/detail.aspx?race=sanjuan70.3&amp;y=2018">70.3 Puerto Rico</a><div class="expand"> IRONMAN 70.3 Puerto Rico</div></li><li><a href="http://eu.ironman.com/triathlon/coverage/detail.aspx?race=campeche70.3&amp;y=2018">70.3 Campeche</a><div class="expand">MAZDA IRONMAN 70.3 Campeche</div></li>
+</ul>
+</div>
+</div>
+<!-- End: eventCoverage -->
+<!-- Start: Header -->
+<div id="headerWrapper">
+<header class="masthead clear">
+<!-- Site Logo -->
+<div id="siteLogo">
+<a href="http://eu.ironman.com/" title="IRONMAN Official Site | IRONMAN triathlon 140.6 &amp; 70.3">IRONMAN Official Site | IRONMAN triathlon 140.6 &amp; 70.3</a>
+<img onclick="window.location.href = 'http://' + window.location.hostname;return false;" src="/media/logo/IRONMAN_40YearsOfDreams.svg"/>
+</div>
+<!-- Header Search Form -->
+<form action="http://eu.ironman.com/search/site.aspx" id="siteSearchForm" method="get" name="searchForm">
+<label for="siteSearch">Search</label>
+<input id="siteSearch" name="q" onfocus="this.value=''" type="text" value="Search..."/>
+<button id="siteSearchBtn" type="submit">Submit</button>
+</form>
+<nav class="siteNav">
+<ul>
+<li class=" first withDropdown"><a href="http://eu.ironman.com/events/triathlon-races.aspx">Races</a>
+<div class="subNavWrapper"> <div class="subNavWrapperInner"><a href="http://www.ironman.com/" target="_blank" title=""><img alt="" class="colImage" height="194" src="http://eu.ironman.com/~/media/d0bb72e73f324f42b24d57915045d711/1612races%20eu.jpg?w=342&amp;h=194" title="" width="342"/></a>
+<div class="col">
+<a class="colLabel" href="http://eu.ironman.com/events/triathlon-races.aspx" title="All Races">All Races</a>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="liveHeaderCss first" href="http://eu.ironman.com/triathlon/coverage/live.aspx">Live Now!</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=ironman">IRONMAN</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=ironman+70.3">IRONMAN 70.3</a></li><li><a href="http://eu.ironman.com/triathlon/events/championships.aspx">Championships</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=shortcourse">Short Course Tri</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=running">Running</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=cycling">Cycling</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=ironkids">IRONKIDS</a></li><li><a class="last" href="http://eu.ironman.com/events/triathlon-races.aspx?d=multisports">Festivals</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<a class="colLabel" href="http://eu.ironman.com/events/triathlon-races.aspx" title="Locations">Locations</a>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/events/triathlon-races.aspx?l=europe">Europe</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=middle+east">Middle East</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=africa">Africa</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=asia">Asia</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=oceania">Oceania</a></li><li><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=north+america">North America</a></li><li><a class="last" href="http://eu.ironman.com/events/triathlon-races.aspx?l=south+america">South America</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Programs</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/organizations/triclubs.aspx">TriClub Program</a></li><li><a href="http://eu.ironman.com/triathlon/organizations/all-world-athlete.aspx">All World Athlete</a></li><li><a href="http://eu.ironman.com/triathlon/events/vip-experience.aspx">VIP Experience</a></li><li><a href="http://eu.ironman.com/triathlon/events/americas/ironman/world-championship/register/ironman-legacy-program.aspx">Kona Legacy Program</a></li><li><a href="http://eu.ironman.com/organizations/south-african-tour-series.aspx">South African Tour Series</a></li><li><a class="last" href="http://eu.ironman.com/partners-emea.aspx">Become a Partner</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Initiatives</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://www.womenfortri.com" target="_blank">Women for Tri</a></li><li><a href="http://eu.ironman.com/triathlon/organizations/swimsmart.aspx">SwimSmart</a></li><li><a href="http://www.ironmanfoundation.org" target="_blank">Foundation</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/organizations/anti-doping.aspx">Anti-Doping</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Resources</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/pages/resources/rules-and-regulations.aspx">Rules</a></li><li><a href="http://eu.ironman.com/triathlon/pages/resources/physically-challenged.aspx">PC Open Division</a></li><li><a href="http://eu.ironman.com/triathlon/pages/resources/handcycle.aspx">Handcycle Division</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/pages/resources/special-teams.aspx">Special Teams</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+</div></div>
+</li>
+<li class=" withDropdown"><a href="http://eu.ironman.com/triathlon/coverage/live.aspx">Results</a>
+<div class="subNavWrapper"> <div class="subNavWrapperInner"><a href="http://www.ironman.com/" title=""><img alt="" class="colImage" height="194" src="http://eu.ironman.com/~/media/7a3fb5a528604aed9e4f8e9fbee67a6b/results%20navimg%201.jpg?w=342&amp;h=194" title="" width="342"/></a>
+<div class="col">
+<p class="colLabel">Age Group Athletes</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/coverage/live.aspx">Recent Results</a></li><li><a href="http://eu.ironman.com/triathlon/organizations/all-world-athlete/agr.aspx">Rankings</a></li><li><a href="http://eu.ironman.com/triathlon/organizations/triclubs/rankings.aspx">Tri Club Rankings</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/organizations/all-world-athlete.aspx">All World Athletes</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<a class="colLabel" href="http://eu.ironman.com/triathlon/organizations/pro-membership.aspx" title="Professional Athletes">Professional Athletes</a>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/organizations/pro-membership.aspx">Pro Membership</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/triathlon-rankings/points-system.aspx">Rankings</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Race Coverage</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="liveHeaderCss first" href="http://eu.ironman.com/triathlon/coverage/live.aspx">Live Now!</a></li><li><a href="http://eu.ironman.com/triathlon/coverage/past.aspx">Past Coverage</a></li><li><a class="last" href="http://www.ironman.com/triathlon-news/race-news.aspx">Race News</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+</div></div>
+</li>
+<li><a href="http://eu.ironman.com/organizations/become-one.aspx">Become One</a>
+</li>
+<li class="mlife withDropdown"><a href="http://eu.ironman.com/triathlon-news/ironman-life.aspx">Life</a>
+<div class="subNavWrapper"> <div class="subNavWrapperInner"><a href="http://home.trainingpeaks.com/products/trainingplans/affiliates/ironman/official-ironman-training-plans" target="_blank" title=""><img alt="" class="colImage" height="285" src="http://eu.ironman.com/~/media/bfe2dc93cc904ef48fdf551ef82224f8/tp%20ironman%20trainingplans%20banner%20final%20red.jpeg?w=342&amp;h=285" title="" width="342"/></a>
+<div class="col">
+<p class="colLabel">Get Started</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="https://u.ironman.com/courses/introduction-triathlon">Introduction to Tri</a></li><li><a href="http://im.cake.aclz.net/?sc=16&amp;c=5104&amp;s1=&amp;ckmrdr=http%3a%2f%2feu.ironman.com%2forganizations%2femea-become-one.aspx">Become One</a></li><li><a href="http://www.ironman.com/triathlon-news/training.aspx">Training</a></li><li><a href="http://eu.ironman.com/triathlon/organizations/triclubs.aspx">TriClubs</a></li><li><a class="last" href="http://home.trainingpeaks.com/products/trainingplans/affiliates/ironman/official-ironman-training-plans" target="_blank">Training Plans</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">News and Features</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/organizations/40-years-of-dreams.aspx">40 Years of Dreams</a></li><li><a href="http://eu.ironman.com/triathlon-news/headlines.aspx">News</a></li><li><a href="http://eu.ironman.com/triathlon-news/race-news.aspx">Race News</a></li><li><a href="http://eu.ironman.com/triathlon-news/profiles.aspx">Profiles</a></li><li><a class="last" href="http://eu.ironman.com/triathlon-news/inspiration.aspx">Inspiration</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<a class="colLabel" href="http://www.ironman.com/triathlon/social-community/from-the-fans.aspx#axzz3yU3ZBl5o" target="_blank" title="Social Community">Social Community</a>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/social-community/from-the-fans.aspx">From the Fans</a></li><li><a href="http://eu.ironman.com/triathlon/social-community/facebook.aspx">Facebook</a></li><li><a href="http://eu.ironman.com/triathlon/social-community/twitter.aspx">Twitter</a></li><li><a href="http://eu.ironman.com/triathlon/social-community/instagram.aspx">Instagram</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/social-community/pinterest.aspx">Pinterest</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<a class="colLabel" href="http://eu.ironman.com/triathlon/history.aspx" title="History">History</a>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironman.com/triathlon/history.aspx">Our History</a></li><li><a class="last" href="http://eu.ironman.com/triathlon/history/hall-of-fame.aspx">Hall of Fame</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+</div></div>
+</li>
+<li class=" withDropdown"><a href="https://u.ironman.com/" target="_blank">IRONMAN U</a>
+<div class="subNavWrapper"> <div class="subNavWrapperInner"><a href="https://u.ironman.com/find-a-coach" title=""><img alt="Find A Coach" class="colImage" height="194" src="http://eu.ironman.com/~/media/67e062cc250d4d06b77dbcbd4602008a/find%20a%20coach.jpg?w=342&amp;h=194" title="Find A Coach" width="342"/></a>
+<div class="col">
+<p class="colLabel">Coaches</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="https://u.ironman.com/courses" target="_blank">About</a></li><li><a class="last" href="https://u.ironman.com/courses/ironman-coaching-certification" target="_blank">Coaching Certification</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Athletes</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="https://u.ironman.com/courses/introduction-triathlon">Introduction to Triathlon</a></li><li><a href="https://u.ironman.com/courses" target="_blank">Courses</a></li><li><a class="last" href="https://u.ironman.com/find-a-coach">Find a Coach</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+</div></div>
+</li>
+<li class=" last withDropdown"><a href="http://eu.ironmanstore.com/?utm_source=ironman.com&amp;utm_medium=drop+down&amp;utm_campaign=shop" target="_blank">Shop</a>
+<div class="subNavWrapper"> <div class="subNavWrapperInner"><a href="https://eu.ironmanstore.com/craft-core-race-gear.html?utm_source=ironman+site&amp;utm_medium=nav+bar&amp;utm_campaign=week11+shop+button" target="_blank" title=""><img alt="" class="colImage" height="194" src="http://eu.ironman.com/~/media/664b47d2d8e2473682be1e1c388ac097/emeaecomm%20ironmanstore%20week11%20suitup%20creativeassets2018%20342x194.jpg?w=342&amp;h=194" title="" width="342"/></a>
+<div class="col">
+<p class="colLabel">Official IRONMAN Apparel</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="https://eu.ironmanstore.com/shop-by-race-2?utm_source=ironman.com&amp;utm_medium=eu+nav+drop+down&amp;utm_campaign=event+gear " target="_blank">Event Gear</a></li><li><a href="https://eu.ironmanstore.com/training-checklist.html?utm_source=ironman.com&amp;utm_medium=eu+nav+drop+down&amp;utm_campaign=training" target="_blank">Training</a></li><li><a class="last" href="http://eu.ironmanstore.com/fit-for-a-finisher.html?utm_source=ironman.com&amp;utm_medium=eu+nav+drop+down&amp;utm_campaign=finisher" target="_blank">Finisher</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+<div class="col">
+<p class="colLabel">Free Shipping - Orders Over 100 Euro</p>
+<!-- Begin: sub nav links -->
+<ul>
+<li><a class="first" href="http://eu.ironmanstore.com/hats-and-visors.html?utm_source=ironman.com&amp;utm_medium=eu+nav+drop+down&amp;utm_campaign=hats+visors" target="_blank">Hats and Visors</a></li><li><a href="http://eu.ironmanstore.com/shop?type_filter=229" target="_blank">Bags</a></li><li><a class="last" href="https://eu.ironmanstore.com" target="_blank">Sale</a></li>
+</ul>
+<!-- End: sub nav links -->
+</div>
+</div></div>
+</li></ul>
+</nav>
+<div id="utilityMenu">
+<div id="utilityMenuInner">
+<div class="controls">
+<div class="clear" id="utilityHandle">
+<a class="accountLink login" href="/triathlon/forms/single-sign-on.aspx?return_to=http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=101&amp;ps=20">Login</a>
+<a class="accountLink register" href="/triathlon/forms/single-sign-up.aspx">Register</a>
+<a class="accountLink my-account" href="/triathlon/account/account-settings.aspx">My Account</a>
+<a class="accountLink logout" href="/triathlon/forms/sign-out.aspx?return_to=http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=101&amp;ps=20">Log Out</a>
+<a class="regionLink" href="#">Region<span class="icon"></span></a>
+<div class="regionDropdown">
+<ul>
+<li class="category"><a href="http://www.ironman.com">North America</a></li>
+<li class="category"><a class="active" href="http://eu.ironman.com">Europe/Africa</a></li>
+<li class="category"><a href="http://ap.ironman.com">Oceania</a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href="http://asia.ironman.com">Asia</a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href=""></a></li>
+<li class="category"><a href="http://www.ironman-china.com/">China</a></li>
+</ul>
+</div>
+</div>
+<div id="socialNav">
+<a class="facebookLink ss-icon" href="https://www.facebook.com/IMEurope/" target="_blank" title="facebook"></a>
+<a class="twitterLink ss-icon" href="http://twitter.com/ironmantri" target="_blank" title="Twitter"></a>
+<a class="youtubeLink ss-icon" href="https://www.youtube.com/user/IMEurope" target="_blank" title="YouTube"></a>
+<a class="emailLink ss-icon" href="http://content.ironman.com/Subscribe-to-IRONMAN-eu.html" title="Email">✉</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+</div>
+<!-- End: Header -->
+<!-- Begin: Wrapper -->
+<div class="" id="wrapper">
+<div id="backgroundArea">
+<div class="moduleWrap eventSubpageFeature">
+<div class="bg">
+<img alt="" height="980" src="http://eu.ironman.com/~/media/10d933a0ea024573ad79a9526cd3769b/2015%20uk%20bike3%201600.jpg" title="" width="1600"/>
+</div>
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<div id="eventLogoHeader">
+<a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk.aspx"><img alt="" height="120" src="http://eu.ironman.com/~/media/9a70395a18974d7384c67e93357265f5/ironman%20uk%20bolton%20neg.png" title="" width="230"/></a>
+</div>
+<div id="eventDetails">
+<h3 class="eventTitle">IRONMAN UK</h3>
+<h4 class="eventSubtitle">Bolton, England <span class="eventDate">Jul 15, 2018</span></h4>
+<p class="eventStatus">Open</p>
+<a class="btnFeatureCardRegister" href="/triathlon/events/emea/ironman/uk/register.aspx" title="Register now">Register <span>▻</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="moduleWrap eventNav">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<nav class="siteNav">
+<div class="navWrapper">
+<ul>
+<li class="first">
+<a class="clear" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk.aspx">Home</a>
+</li>
+<li class="withDropdown ">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register.aspx">Register</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register.aspx">Register</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register/triclub.aspx">TriClub</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register/transfer-withdrawal.aspx">Transfer/Withdrawal</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register/pro-entry.aspx">Pro Entry</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/register/registration-essentials.aspx">Registration Essentials</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="withDropdown ">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes.aspx">Athletes</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class="withSubDropdown first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation.aspx">Travel &amp; Accommodation &gt;</a>
+<div class="subsubNavWrapper">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation/nirvana-travel.aspx">Nirvana Travel</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation/nirvana-accommodation.aspx">Nirvana Accommodation</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation/accommodation.aspx">Accommodation</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation/win-a-nirvana-accommodation-package.aspx">Win A Nirvana Accommodation Package</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/travel-accommodation/nirvana-competition-rules.aspx">Nirvana Competition Rules</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/ironman-nutrition-guide.aspx">IRONMAN Nutrition Guide</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/athlete-guide.aspx">Athlete Guide</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/schedule.aspx">Schedule</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/shuttle-buses.aspx">Shuttle Buses</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/start-list.aspx">Start List</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/course.aspx">Course</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/nutrition-guide.aspx">Nutrition Guide</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/training-resources.aspx">Training Resources</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/bike-services.aspx">Bike Services</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/finisherpix.aspx">FinisherPix</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/triclub-program.aspx">TriClub Program</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/vip-2018.aspx">VIP 2018</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/kona-qualification.aspx">Kona Qualification</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/faqs.aspx">FAQs</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/swim-smart.aspx">Swim Smart</a>
+</li>
+<li class="withSubDropdown ">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/rules-and-regulations.aspx">Rules and Regulations &gt;</a>
+<div class="subsubNavWrapper">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/pages/resources/physically-challenged.aspx">Physically Challenged</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/pages/resources/handcycle.aspx">Handcycle</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/pages/resources/special-teams.aspx">Special Teams</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/athletes/other-events.aspx">Other Events</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="withDropdown ">
+<a class="active" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx">Results</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx">Results</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results/triclub-results.aspx">TriClub Results</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="withDropdown ">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/partner.aspx">Partner</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/partner.aspx">Partners</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/partner/become-a-partner.aspx">Become a Partner</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="withDropdown ">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/volunteer.aspx">Volunteer</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/volunteer/volunteer-at-other-ironman-uk-events.aspx">Volunteer at Other IRONMAN UK Events</a>
+</li>
+<li class=" last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/volunteer/internship-programme.aspx">Internship Programme</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/ironkids.aspx">IRONKIDS</a>
+</li>
+<li class="">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/road-access.aspx">Road Access</a>
+</li>
+<li class="withDropdown last">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/contact.aspx">Contact</a>
+<div class="subNavWrapper">
+<div class="subNavWrapperInner">
+<div class="col">
+<ul>
+<li class=" first">
+<a class="" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/contact/media.aspx">Media</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="backgroundImage">
+</div>
+<!-- Begin: header content area -->
+<header class="pagehead">
+<h2 class="">{0} Results</h2>
+</header>
+<!-- End: header content area -->
+<div id="wrapperInner">
+<!-- Begin: main content area -->
+<div class="navRail" id="navCol">
+</div>
+<div class="extra clear" id="mainContentColExtra">
+<div class="moduleWrap eventLandingTop">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<div class="adContent">
+<!-- IM_728x90_EMEA_uk --><div id="div-gpt-ad-1461707083" style="width:728px; height:90px;"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-1461707083'); });</script></div>
+</div>
+<div class="adContent">
+<!-- IM_300x90_EMEA_uk --><div id="div-gpt-ad-1461707084" style="width:300px; height:90px;"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-1461707084'); });</script></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Start: main content area -->
+<div class="clear" id="mainContentColWrap">
+<div id="mainInnerColWrap">
+<div class="" id="mainContentCol1">
+</div>
+<div class="" id="mainContentCol2">
+</div>
+<div class="rail3" id="mainContentCol3">
+</div>
+<div class="rail4" id="mainContentCol4">
+<div class="moduleWrap eventResults resultsListing">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<section>
+<div class="breadcrumbs">
+<ul>
+<li><a href="http://eu.ironman.com/events/triathlon-races.aspx">Races</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk.aspx">UK</a></li><li class="last"><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx">Results</a></li>
+</ul>
+</div>
+<header>
+<h1>07/16/2017 Results: UK</h1>
+</header>
+<div class="filters live-filters clear">
+<form action="?rd=20170716&amp;race=uk&amp;y=2017" id="filterResultsForm" method="GET">
+<input name="race" type="hidden" value="uk"/>
+<input name="rd" type="hidden" value="20170716"/>
+<input name="y" type="hidden" value="2017"/>
+<select class="selectBox genderSelect" id="genderSelect" name="sex" style="display: none;">
+<option guid-value="Select Gender" value="n/a">Select Gender</option><option guid-value="F" value="F">Female</option><option guid-value="M" value="M">Male</option>
+</select>
+<select class="selectBox categorySelect" id="categorySelect" name="agegroup" style="display: none;">
+<option guid-value="Select Category" value="n/a">Select Category</option><option guid-value="Pro" value="Pro">Pro</option><option guid-value="18-24" value="18-24">18 to 24</option><option guid-value="25-29" value="25-29">25 to 29</option><option guid-value="30-34" value="30-34">30 to 34</option><option guid-value="35-39" value="35-39">35 to 39</option><option guid-value="40-44" value="40-44">40 to 44</option><option guid-value="45-49" value="45-49">45 to 49</option><option guid-value="50-54" value="50-54">50 to 54</option><option guid-value="55-59" value="55-59">55 to 59</option><option guid-value="60-64" value="60-64">60 to 64</option><option guid-value="65-69" value="65-69">65 to 69</option><option guid-value="70-74" value="70-74">70 to 74</option><option guid-value="75-79" value="75-79">75 to 79</option><option guid-value="80-84" value="80-84">80 to 84</option><option guid-value="85-89" value="85-89">85 to 89</option><option guid-value="90 Plus" value="90 Plus">90 Plus</option><option guid-value="PC" value="PC">PC</option>
+</select>
+<select class="selectBox rankingSelect" id="rankingSelect" name="loc" style="display: none;">
+<option guid-value="Select country" value="n/a">Select country</option><option guid-value="ARG" value="ARG">Argentina</option><option guid-value="AUS" value="AUS">Australia</option><option guid-value="AUT" value="AUT">Austria</option><option guid-value="BEL" value="BEL">Belgium</option><option guid-value="BRA" value="BRA">Brazil</option><option guid-value="VGB" value="VGB">British Virgin Islands</option><option guid-value="BDI" value="BDI">Burundi</option><option guid-value="CAN" value="CAN">Canada</option><option guid-value="COL" value="COL">Colombia</option><option guid-value="HRV" value="HRV">Croatia</option><option guid-value="CZE" value="CZE">Czech Republic</option><option guid-value="DNK" value="DNK">Denmark</option><option guid-value="ECU" value="ECU">Ecuador</option><option guid-value="EST" value="EST">Estonia</option><option guid-value="FIN" value="FIN">Finland</option><option guid-value="FRA" value="FRA">France</option><option guid-value="DEU" value="DEU">Germany</option><option guid-value="GRC" value="GRC">Greece</option><option guid-value="HUN" value="HUN">Hungary</option><option guid-value="IND" value="IND">India</option><option guid-value="IRL" value="IRL">Ireland</option><option guid-value="ISR" value="ISR">Israel</option><option guid-value="ITA" value="ITA">Italy</option><option guid-value="JPN" value="JPN">Japan</option><option guid-value="KAZ" value="KAZ">Kazakhstan</option><option guid-value="LTU" value="LTU">Lithuania</option><option guid-value="MYS" value="MYS">Malaysia</option><option guid-value="NLD" value="NLD">Netherlands</option><option guid-value="NZL" value="NZL">New Zealand</option><option guid-value="NOR" value="NOR">Norway</option><option guid-value="PHL" value="PHL">Philippines</option><option guid-value="POL" value="POL">Poland</option><option guid-value="PRT" value="PRT">Portugal</option><option guid-value="ROU" value="ROU">Romania</option><option guid-value="SGP" value="SGP">Singapore</option><option guid-value="SVN" value="SVN">Slovenia</option><option guid-value="ZAF" value="ZAF">South Africa</option><option guid-value="ESP" value="ESP">Spain</option><option guid-value="SWE" value="SWE">Sweden</option><option guid-value="CHE" value="CHE">Switzerland</option><option guid-value="TZA" value="TZA">Tanzania</option><option guid-value="TTO" value="TTO">Trinidad and Tobago</option><option guid-value="UKR" value="UKR">Ukraine</option><option guid-value="GBR" value="GBR">United Kingdom</option><option guid-value="USA" value="USA">United States</option>
+</select>
+<a class="applyBtn result-filter-submit" href="#"><span>Apply</span></a>
+</form>
+<div class="formWrapper">
+<form action="?rd=20170716&amp;race=uk&amp;y=2017" class="searchForm" id="resultsSearchForm" method="GET">
+<input name="race" type="hidden" value="uk"/>
+<input name="rd" type="hidden" value="20170716"/>
+<input name="y" type="hidden" value="2017"/>
+<label for="resultsSearch">Search</label>
+<input id="resultsSearch" name="q" onblur="this.value = window.searchPlaceholder" onfocus="window.searchPlaceholder = this.value; this.value=''" type="text" value="Enter Last Name or Bib #"/>
+<button class="ss-icon" id="resultsSearchBtn" onclick="document.getElementById('resultsSearchForm').submit()" type="submit">🔎</button>
+</form>
+</div>
+</div>
+<div class="alphaFilters live-filters clear">
+<a class="allLink" href="?rd=20170716&amp;race=uk&amp;y=2017">All</a>
+<ul>
+<li><a alpha-label="A" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=A">A</a></li>
+<li><a alpha-label="B" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=B">B</a></li>
+<li><a alpha-label="C" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=C">C</a></li>
+<li><a alpha-label="D" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=D">D</a></li>
+<li><a alpha-label="E" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=E">E</a></li>
+<li><a alpha-label="F" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=F">F</a></li>
+<li><a alpha-label="G" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=G">G</a></li>
+<li><a alpha-label="H" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=H">H</a></li>
+<li><a alpha-label="I" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=I">I</a></li>
+<li><a alpha-label="J" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=J">J</a></li>
+<li><a alpha-label="K" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=K">K</a></li>
+<li><a alpha-label="L" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=L">L</a></li>
+<li><a alpha-label="M" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=M">M</a></li>
+<li><a alpha-label="N" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=N">N</a></li>
+<li><a alpha-label="O" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=O">O</a></li>
+<li><a alpha-label="P" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=P">P</a></li>
+<li><a alpha-label="Q" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=Q">Q</a></li>
+<li><a alpha-label="R" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=R">R</a></li>
+<li><a alpha-label="S" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=S">S</a></li>
+<li><a alpha-label="T" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=T">T</a></li>
+<li><a alpha-label="U" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=U">U</a></li>
+<li><a alpha-label="V" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=V">V</a></li>
+<li><a alpha-label="W" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=W">W</a></li>
+<li><a alpha-label="X" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=X">X</a></li>
+<li><a alpha-label="Y" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=Y">Y</a></li>
+<li><a alpha-label="Z" href="?rd=20170716&amp;race=uk&amp;y=2017&amp;l=Z">Z</a></li>
+</ul>
+</div>
+<div class="results-athletes-table">
+<h2>All Athletes <span>(2,040 Athletes)</span></h2>
+<div class="table-actions">
+</div>
+<table class="tablesorter" id="eventResults" width="100%">
+<thead>
+<tr>
+<th class="header name"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=name" style="">Name</a></th>
+<th class="header country"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=country" style="">Country</a></th>
+<th class="header drank"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=drank" style="">Div Rank</a></th>
+<th class="header grank"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=grank" style="">Gender Rank</a></th>
+<th class="header orank"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=orank" style="">Overall Rank</a></th>
+<th class="header swim"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=swim" style="">Swim</a></th>
+<th class="header bike"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=bike" style="">Bike</a></th>
+<th class="header run"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=run" style="">Run</a></th>
+<th class="header finish"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=finish" style="">Finish</a></th>
+<th class="header points"><a href="/handlers/eventliveresults.aspx?race=uk&amp;rd=20170716&amp;ps=20&amp;so=points&amp;sd=d" style="">Points</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=688&amp;detail=1">Taylor, Oliver</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=176&amp;detail=1">Teague, David</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:11:52</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=987&amp;detail=1">Teixeira, Nuno</a> </td><td>PRT</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=989&amp;detail=1">Terry, Chris</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:22:28</td> <td>06:09:16</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=592&amp;detail=1">Thomas, Elsbeth</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:26:31</td> <td>05:05:34</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1820&amp;detail=1">Thomlinson, Paul</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:46:59</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1524&amp;detail=1">Tinsley, Stewart</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=483&amp;detail=1">Turkovic, Andrea</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1527&amp;detail=1">Turner, Andy</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:07:32</td> <td>05:53:59</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=552&amp;detail=1">Turner, Kerry</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1528&amp;detail=1">Turull Forns, Israel</a> </td><td>ESP</td> <td>---</td> <td>---</td> <td>---</td> <td>01:00:52</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=133&amp;detail=1">Van Den Broeck, Walter</a> </td><td>BEL</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=2095&amp;detail=1">Veen, Stuart</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1533&amp;detail=1">Velupillai, Nava</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:41:46</td> <td>08:37:50</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=363&amp;detail=1">Vibrams, Nicole</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:33:49</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1535&amp;detail=1">Vickers, Paul</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=2147&amp;detail=1">Ward, Kieran</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>02:24:37</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1540&amp;detail=1">Watkinson, Sam</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>01:55:39</td> <td>---</td> <td>---</td> <td>DNF</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1547&amp;detail=1">Whaley, Allan</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+<tr>
+<td><a class="athlete" href="?rd=20170716&amp;race=uk&amp;bidid=1548&amp;detail=1">Wheeler, Ian</a> </td><td>GBR</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>---</td> <td>DNS</td> <td>---</td></tr>
+</tbody>
+</table>
+<div id="pagination">
+<div class="pagination"><a class="prevPage" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=100&amp;ps=20" title="Prev"><span>‹</span> Prev</a><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?ps=20" title="Go to page 1"><span>1</span></a> <span class="ellipsis">...</span> <a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=99&amp;ps=20" title="Go to page 99"><span>99</span></a><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=100&amp;ps=20" title="Go to page 100"><span>100</span></a><div class="active" title="Go to page 101"><span>101</span></div><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=102&amp;ps=20" title="Go to page 102"><span>102</span></a><a class="nextPage" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=102&amp;ps=20" title="Next">Next <span>›</span></a></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- required for the overlay to work -->
+<a href="#results-pdf-data" id="inline" style="display:none"></a>
+<div style="display:none">
+<div id="results-pdf-data">
+<div class="header"></div>
+<p class="message"></p>
+<div class="pdf-link"></div>
+</div>
+</div>
+</div>
+<div class="rail5" id="mainContentCol5">
+<div class="moduleWrap subPageSubNav black">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<header>
+<h2>Race Results</h2>
+</header>
+<nav class="rResultswWrap">
+<ul class="subLinks" id="raceResults">
+<li><a class="active" href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20170716"><span class="ss-icon">◅</span>07/16/2017 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20160717"><span class="ss-icon">◅</span>07/17/2016 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20150719"><span class="ss-icon">◅</span>07/19/2015 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20140720"><span class="ss-icon">◅</span>07/20/2014 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20130804"><span class="ss-icon">◅</span>08/04/2013 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20120722"><span class="ss-icon">◅</span>07/22/2012 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20110731"><span class="ss-icon">◅</span>07/31/2011 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20100801"><span class="ss-icon">◅</span>08/01/2010 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20090802"><span class="ss-icon">◅</span>08/02/2009 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20080907"><span class="ss-icon">◅</span>09/07/2008 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20070819"><span class="ss-icon">◅</span>08/19/2007 Results</a></li><li><a href="http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?rd=20060820"><span class="ss-icon">◅</span>08/20/2006 Results</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="moduleWrap adModule adModule300x250">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<!-- IM_300x250_EMEA_uk --><div id="div-gpt-ad-47295637" style="width:300px; height:250px;"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-47295637'); });</script></div>
+</div>
+</div>
+</div>
+<div class="moduleWrap genericDesc">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<section>
+<header>
+<h1> </h1>
+</header>
+<p><script type="text/javascript">
+window.addEventListener("message", function(e) {
+      // Keep track of the iframe height.
+      var if_height;
+      if (e.origin !== "http://tracking.ironmanlive.com" && e.origin !== "http://tracker.ironman.com" && e.origin !== "http://track.ironman.com")
+      {
+            return;
+      };
+      var h = e.data;
+      if ( !isNaN( h ) && h > 0 && h !== if_height ) {
+                      if (h < 1200) {
+                            h = 1200;
+                      };
+                      // Height has changed, update the iframe.
+                      $('iframe#trackerFrame').height( if_height = h );
+
+      }
+});
+</script></p>
+</section>
+</div>
+</div>
+</div>
+<div class="moduleWrap sponsorGrid">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<header>
+<h2>SPONSORS</h2>
+</header>
+<ul class="gridList">
+<li class="odd"><a href="http://www.active.com" target="_blank" title=""><img height="150" src="http://eu.ironman.com/~/media/8247f7eff3e549039ec59582af1b46ee/20180201%20logo%20active.jpg" width="150"/></a></li><li class="even"><a href="https://www.nirvanaeurope.com/en/events/ironman" target="_blank" title=""><img height="150" src="http://eu.ironman.com/~/media/d6de8074df654c5c9ffb5b362d8c9266/logowebsite%20nirvana%20new.gif" width="150"/></a></li><li class="odd"><a href="http://global.craftsportswear.com/" target="_blank" title=""><img height="150" src="http://eu.ironman.com/~/media/9a1e9135af0f44ca98945c77a2d9aeeb/craft%20web.gif" width="150"/></a></li><li class="even"><a href="http://www.finisherpix.com" target="_blank" title=""><img height="150" src="http://eu.ironman.com/~/media/b2da3d0026a34beb96ac92e22a09af0f/finisherpix%20150x150.png" width="150"/></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="moduleWrap adModule adModule300x100">
+<div class="moduleContentOuter">
+<div class="moduleContentInner clear">
+<!-- IM_300x100_EMEA_uk --><div id="div-gpt-ad-1775542766" style="width:300px; height:100px;"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-1775542766'); });</script></div>
+</div>
+</div>
+</div>
+</div>
+<div class="rail6" id="mainContentCol6">
+</div>
+</div>
+</div>
+<div class="extraBottom clear" id="mainContentColExtraBottom">
+</div>
+<!-- End: main content area -->
+</div>
+</div>
+<!-- End: Wrapper -->
+<div class="bottomBg"></div>
+<!-- Begin: Footer -->
+<footer>
+<div id="footerInner">
+<div class="footerNav clear">
+<dl>
+<dt><a href="http://eu.ironman.com/events/triathlon-races.aspx" title="Races">Races</a></dt>
+<dt><a href="http://eu.ironman.com/events/triathlon-races.aspx" title="All Races">All Races</a></dt><dd><a class="liveFooterCss" href="http://eu.ironman.com/triathlon/coverage/live.aspx" target="_self" title="Live Coverage">Live Coverage</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=ironman" target="_self" title="IRONMAN">IRONMAN</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=ironman+70.3" target="_self" title="IRONMAN 70.3">IRONMAN 70.3</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/events/championships.aspx" target="_self" title="Championships">Championships</a></dd>
+<dd><a href="http://eu.ironman.com/system/menu-footer/races/events-calendar.aspx?d=shortcourse" target="_self" title="Short Course Tri">Short Course Tri</a></dd>
+<dd><a href="http://eu.ironman.com/system/menu-footer/races/events-calendar.aspx?d=cycling" target="_self" title="Cycling">Cycling</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?d=running" target="_self" title="Running">Running</a></dd>
+<dd><a href="http://eu.ironman.com/system/menu-footer/races/events-calendar.aspx?d=ironkids" target="_self" title="IRONKIDS">IRONKIDS</a></dd>
+<dd><a href="http://eu.ironman.com/system/menu-footer/races/events-calendar.aspx?d=multisports" target="_self" title="MultiSport Tri">MultiSport Tri</a></dd>
+<dt><a href="http://eu.ironman.com/events/triathlon-races.aspx" title="Locations">Locations</a></dt><dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=europe" target="_self" title="Europe">Europe</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=africa" target="_self" title="Africa">Africa</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=asia" target="_self" title="Asia">Asia</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=australia" target="_self" title="Australia">Australia</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=north+america" target="_self" title="North America">North America</a></dd>
+<dd><a href="http://eu.ironman.com/events/triathlon-races.aspx?l=south+america" target="_self" title="South America">South America</a></dd>
+</dl>
+<dl>
+<dt>Results</dt>
+<dt>Age Group Athletes</dt><dd><a class="liveFooterCss" href="http://eu.ironman.com/triathlon/coverage/live.aspx" target="_self" title="Recent Results">Recent Results</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon-news/profiles.aspx" target="_self" title="Profiles">Profiles</a></dd>
+<dt>Pro Athletes</dt><dd><a href="http://eu.ironman.com/triathlon/organizations/pro-membership.aspx" target="_self" title="Pro Membership">Pro Membership</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/triathlon-rankings/points-system.aspx" target="_self" title="Rankings">Rankings</a></dd>
+<dd><a href="http://www.ironman.com/triathlon-news/race-news.aspx" target="_self" title="Race News">Race News</a></dd>
+</dl>
+<dl>
+<dt><a href="http://eu.ironman.com/triathlon-news/training.aspx" title="Training">Training</a></dt>
+<dt><a href="http://eu.ironman.com/triathlon/pages/getting-started.aspx" title="Get Started">Get Started</a></dt><dd><a href="http://eu.ironman.com/triathlon-news/ironman-101.aspx" target="_self" title="IRONMAN 101">IRONMAN 101</a></dd>
+<dd><a href="http://ironmanfoundation.org" target="_self" title="IRONMAN Foundation">IRONMAN Foundation</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/pages/resources/rules-and-regulations.aspx" target="_self" title="Rules">Rules</a></dd>
+<dd><a href="http://eu.ironman.com/ironman-faq.aspx" target="_self" title="FAQ">FAQ</a></dd>
+<dt>Reach Your Goals</dt><dd><a href="http://eu.ironman.com/triathlon-news/training.aspx" target="_self" title="Training">Training</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon-news/nutrition.aspx" target="_self" title="Nutrition">Nutrition</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon-news/inspiration.aspx" target="_self" title="Inspiration">Inspiration</a></dd>
+</dl>
+<dl>
+<dt><a href="http://ap.ironman.com/triathlon-news/headlines.aspx" title="News">News</a></dt>
+<dt>All News</dt><dd><a href="http://eu.ironman.com/triathlon-news/inspiration.aspx" target="_self" title="Inspiration">Inspiration</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon-news/training.aspx" target="_self" title="Training">Training</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon-news/nutrition.aspx" target="_self" title="Nutrition">Nutrition</a></dd>
+<dt>Social Community</dt>
+</dl>
+<dl class="last">
+<dt class="headerCss"><a href="http://ironmanstore.eu/" title="Store">Store</a></dt>
+<dd><a href="https://eu.ironmanstore.com/shop?category_filter=107" target="_blank" title="Get the Gear">Get the Gear</a></dd>
+<dt class="headerCss ">Programs</dt><dd><a href="http://eu.ironman.com/triathlon/organizations/triclubs.aspx" target="_self" title="TriClub Program">TriClub Program</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/organizations/all-world-athlete.aspx" target="_self" title="All World Athlete">All World Athlete</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/events/americas/ironman/world-championship/register/ironman-legacy-program.aspx" target="_self" title="Kona Legacy Program">Kona Legacy Program</a></dd>
+<dd><a href="http://ironmanfoundation.org" target="_self" title="Foundation">Foundation</a></dd>
+</dl>
+<dl class="corporate clear">
+<dt>Corporate:</dt><dd><a href="http://eu.ironman.com/triathlon/organizations/media.aspx" title="Press Information">Press Information</a></dd>
+<dd><a href="http://eu.ironman.com/job-openings.aspx" title="Jobs">Jobs</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/legal-faq.aspx" title="Intellectual Property Usage">Intellectual Property Usage</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/privacy-policy.aspx" title="Privacy Policy">Privacy Policy</a></dd>
+<dd><a href="http://eu.ironman.com/triathlon/contact-us.aspx" title="Contact">Contact</a></dd>
+</dl>
+</div>
+<div class="footerRight">
+<p class="subscribeLabel">Subscribe for updates: <span>Get news, events &amp; deals</span></p>
+<a class="signupBtn" data-ga-event="newsletterClickThrough" href="http://content.ironman.com/Subscribe-to-IRONMAN-eu.html" title="Email">Signup for Email Updates</a>
+<a class="facebookLink" href="https://www.facebook.com/IMEurope/" target="_blank" title="facebook"><span class="ss-icon"></span></a>
+<a class="twitterLink" href="http://twitter.com/ironmantri" target="_blank" title="Twitter"><span class="ss-icon"></span></a>
+<a class="youtubeLink" href="https://www.youtube.com/user/IMEurope" target="_blank" title="YouTube"><span class="ss-icon"></span></a>
+<a class="digiLink" href="http://www.mirumagency.com" target="_blank">
+<img alt="Site Built By Mirum" height="33" src="http://eu.ironman.com/media/built_by_mirum.png" width="75"/>
+</a>
+</div>
+</div>
+<div class="footerCopyright">
+<div class="footerCopyrightInner">
+<p>Copyright© 2001-2018 World Triathlon Corporation (WTC). All Rights Reserved. IRONMAN®, IRONMAN TRIATHLON®, M-DOT®, IRONMANLIVE.com®, IRONMAN.COM™ and 70.3® are trademarks of WTC.<br/>Any use of these marks without the express written consent of WTC is prohibited.</p>
+</div>
+</div>
+</footer>
+<!-- End: Footer -->
+<script type="text/javascript">
+    jCoreInit("http%3a%2f%2feu.ironman.com%2ftriathlon%2fevents%2femea%2fironman%2fuk%2fresults.aspx", "%7b0%7d+Results", "88b6c5d9-9861-4607-98f3-59f9b4d19784", []);
+</script>
+<!-- Start IRONMAN Quantcast tag -->
+<script type="text/javascript">
+    qoptions={
+        qacct:"p-3fRk5b9IqK8fo"
+    };
+</script>
+<script src="http://edge.quantserve.com/quant.js" type="text/javascript"></script>
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="http://pixel.quantserve.com/pixel/p-3fRk5b9IqK8fo.gif" style="display: none;" width="1"/>
+</noscript>
+<!-- End IRONMAN Quantcast tag -->
+<!-- Begin comScore Tag -->
+<!-- <script>
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+<script>
+    COMSCORE.beacon({
+        c1:2,
+        c2:3005619,
+        c3:"",
+        c4:"",
+        c5:"",
+        c6:"",
+        c15:""
+    });
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=3005619&c3=&c4=&c5=&c6=&c15=&cj=1" />
+</noscript>-->
+<!-- End comScore Tag -->
+<script type="text/javascript">tyntVariables = {"ap":"Originally from:"};</script> <script src="http://tcr.tynt.com/javascripts/Tracer.js?user=bakJX-LzSr34Enadbi-bpO&amp;b=1" type="text/javascript"></script>
+</body>
+</html>
