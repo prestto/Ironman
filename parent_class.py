@@ -1,3 +1,27 @@
+"""
+
+This module is designed to scrape results from the iroman website
+It contains 1 parent class and 2 sub classes for parsing web pages:
+
+- ger_parser <- parent
+
+- race_parser <- inherits from class gen_parser, used to scrape links to results pages
+then store results in the ironbase.db sqlite3 database
+
+- results_parser <- inherits from class gen_parser, used to scrape and store in .http 
+file each results page (race times)
+
+There are also the 1 class for parsing the results from each type of page
+- single_race <- used in conjunction with the class race_parser
+contains functions to strip information from each article in the http
+
+Why not store all http information from the race pages?
+There are only 63 race pages, this will be efficient, and not add too much to stress on the ironman server
+to reprocess.
+it would not be great to scrape every race if a single detail was missed on each page.
+
+"""
+
 from bs4 import BeautifulSoup
 import requests
 import logging
@@ -27,15 +51,6 @@ class gen_parser:
         else:
             return(BeautifulSoup(req, "lxml"))
 
-    def write_to_file(self):
-        try:
-            f = open(self.file_path, "w")
-            f.write(str(self.body))
-        except Exception as e:
-            logging.debug("Could not print to file: {} error: {}".format(self.file_path, e))
-        else:
-            logging.debug("Results written succesfully to: {}".format(self.file_path))
-
     def get_next_page_link(self):
         try:
             next_page_link = self.body.find("a", {"class" : "nextPage"}).get("href")
@@ -49,7 +64,6 @@ class results_parser(gen_parser):
     """
     file_name = ""
     file_path = ""
-    next_page_link = ""
     output_folder = ""
 
     def __init__(self, web_url, output_folder):
@@ -68,26 +82,17 @@ class results_parser(gen_parser):
 
     def get_full_path(self):
         return("{}/{}.html".format(self.output_folder, self.file_name))
-
-
-    def return_soup(self):
+    
+    def write_to_file(self):
         try:
-            req = requests.get(self.web_url).content
-        except:
-            logging.debug("Could not retreive page: {}".format(self.web_url))
+            f = open(self.file_path, "w")
+            f.write(str(self.body))
+        except Exception as e:
+            logging.debug("Could not print to file: {} error: {}".format(self.file_path, e))
         else:
-            return(BeautifulSoup(req, "lxml"))
+            logging.debug("Results written succesfully to: {}".format(self.file_path))
 
-def process_results_pages(web_url, output_folder):
-    results_page = gen_parser(web_url, output_folder)
-    results_page.write_to_file()
-    print(results_page.next_page_link)
-    if results_page.next_page_link is not None:
-        process_results_pages(results_page.next_page_link, output_folder)
 
-# addy = "http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=101&ps=20#axzz59wPZrEd1"
-# output_folder = "./page_contents"
-# process_pages(addy, output_folder)
 
 class single_race:
 
@@ -187,27 +192,58 @@ class race_parser(gen_parser):
     #     for line in list_to_file:
     #         f.write(line + '\n')
 
-
+# Insert all races to the db -------------------------------------   
 def process_race_pages(web_url, db_path):
-
+    """
+    loop recursively through all race pages
+    initial race page is taken as an argument
+    """
     race_page = race_parser(web_url, db_path)
-
     print("processing: {}".format(web_url))
-
     for article in race_page.articles:
         summary_race_info = single_race(article, db_path)
         print("race: {}".format(summary_race_info.title))
         if not summary_race_info.link_in_base():
             print("inserting: {}".format(summary_race_info.title))
             summary_race_info.insert_to_base()
-
     if race_page.get_next_page_link is not None:
         process_race_pages(race_page.next_page_link, db_path)
 
+# Page one of the race list from the ironman page
 parent_page = "http://eu.ironman.com/triathlon/coverage/past.aspx#axzz59wPZrEd1"
+# The base to which we will write races
 db_path = "./database/ironbase.db"
-
+# Launch
 process_race_pages(parent_page, db_path)
+
+# Save all results pages to the specified folder -------------------
+def process_results_pages(web_url, output_folder):
+    """
+    Loop recursively through all results pages, starting from the top page
+    this top page is found in the database ironbase.db
+    """
+    results_page = results_parser(web_url, output_folder)
+    results_page.write_to_file()
+    print(results_page.next_page_link)
+    if results_page.next_page_link is not None:
+        process_results_pages(results_page.next_page_link, output_folder)
+
+# start_page_races = "http://eu.ironman.com/triathlon/events/emea/ironman/uk/results.aspx?p=101&ps=20#axzz59wPZrEd1"
+# results_output_folder = "./page_contents"
+# process_pages(addy, results_output_folder)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

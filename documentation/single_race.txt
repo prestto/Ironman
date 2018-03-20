@@ -1,0 +1,24 @@
+Documentation for class single_race
+
+Class single_race
+Class designed to handle each article from a page of race listings
+
+Arguments:
+article - an http snippet extracted from the race page
+db_path - the name and path of the database into which you would like the results to be inserted
+
+
+Variables:
+atricle - The http passed to the variable on instantiation
+database_path - the database path passed in initiation of class
+link - the url to follow to get the race results 
+title - race title, eg Ironman 70.3 Lanzarote
+datetime - Full datetime of the race, though only the date is readable outside the http
+location - full location, eg London, England
+city - City (taken from location)
+country - country (taken from location)
+year_link - the year from the link (links do not always lead to the correct results table(!))
+
+Methods:
+link_in_base: is the link in the ironbase.db?  returns a boolean
+insert_to_base: insert the variables to the ironbase.db

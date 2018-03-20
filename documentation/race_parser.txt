@@ -1,0 +1,17 @@
+Documentation for class race_parser
+
+Class race_parser
+The class race_parser inherits from gen_parser.  It reads all race information present on the
+race list page and returns a list of articles which can be passed to the single_race class. 
+
+Arguments:
+web_url - the url of the web page that you want to scrape
+db_path - the name and path of the database into which you would like the results to be inserted
+
+Methods:
+return_soup - An init method, this grabs the http from the web_url argument - sets parameter "body"
+get_file_name - An init method, extracts the file name from the url - sets parameter "body"
+get_full_path - An init method, combines the filename with output_folder - sets parameter "body"
+
+get_next_page_link - get the url for the next results page 
+write_to_file - write the "body" to "file_path"
