@@ -43,11 +43,14 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
-def logit(my_function):
-    def wrapper_function(*args, **kwargs):
-        logger.info(locals())
-        return(my_function(*args, **kwargs))
-    return(wrapper_function)
+"""
+
+"""
+# def logit(my_function):
+#     def wrapper_function(*args, **kwargs):
+#         logger.info(locals())
+#         return(my_function(*args, **kwargs))
+#     return(wrapper_function)
 
 
 class gen_parser:
@@ -81,7 +84,7 @@ class gen_parser:
             return(BeautifulSoup(req, "lxml"))
 
     def be_responsible(self):
-        nap_time = random.uniform(0, 1)
+        nap_time = random.uniform(3, 6)
         sleep(nap_time)
 
     def get_next_page_link(self):
@@ -141,7 +144,7 @@ class results_parser(gen_parser):
 
     def get_file_name(self):
         try:
-            file_name = re.match("(?:.+race=)(.+)", self.web_url).group(1)
+            file_name = re.match("(?:.+aspx?)(.+)", self.web_url).group(1)
         except:
             file_name = re.sub("/", "-", self.web_url)
         finally:

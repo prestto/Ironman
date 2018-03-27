@@ -4,31 +4,52 @@ conn = sql.connect("./database/ironbase.db")
 
 c = conn.cursor()
 
-# Check that links page exists, if not create it
-tb_exists = "SELECT name FROM sqlite_master WHERE type='table' AND name='link_page'"
-
-if not co.execute(tb_exists).fetchone():
-    req = c.execute("""
-                  create table link_page (
-                  id integer primary key,
-                  link NVARCHAR(200),
-                  event_name nvarchar(100),
-                  datetime text,
-                  city NVARCHAR(100),
-                  country NVARCHAR(100),
-                  year_table int,
-                  location_table NVARCHAR(100),
-                  distance NVARCHAR(50),
-                  format NVARCHAR(50)
-                  );
-                  """)
-    
-tb_exists = "SELECT name FROM sqlite_master WHERE type='table' AND name='results_page'"
-if not co.execute(tb_exists).fetchone():
-    req = c.execute("""
-                ADD RESULTS PAGE HERE
+req = c.execute("""
+              create table race_times (
+              id integer primary key,
+              name NVARCHAR(100), 
+              country NVARCHAR(100), 
+              datetime TEXT, 
+              swim TEXT, 
+              bike TEXT, 
+              run TEXT, 
+              gen_rank NVARCHAR(10), 
+              ovr_rank NVARCHAR(10), 
+              div_rank NVARCHAR(10), 
+              total NVARCHAR(10), 
+              points NVARCHAR(10),
+              parent_url NVARCHAR(200)
               );
               """)
+
+
+# # Check that links page exists, if not create it
+# tb_exists = "SELECT name FROM sqlite_master WHERE type='table' AND name='link_page'"
+
+# if not co.execute(tb_exists).fetchone():
+#     req = c.execute("""
+#                   create table link_page (
+#                   id integer primary key,
+#                   link NVARCHAR(200),
+#                   event_name nvarchar(100),
+#                   datetime text,
+#                   city NVARCHAR(100),
+#                   country NVARCHAR(100),
+#                   year_table int,
+#                   location_table NVARCHAR(100),
+#                   distance NVARCHAR(50),
+#                   format NVARCHAR(50)
+#                   );
+#                   """)
+    
+# tb_exists = "SELECT name FROM sqlite_master WHERE type='table' AND name='results_page'"
+# if not co.execute(tb_exists).fetchone():
+#     req = c.execute("""
+#                 ADD RESULTS PAGE HERE
+#               );
+#               """)
+
+
 # c.execute("""
 #           select count(link)
 #           from link_page
