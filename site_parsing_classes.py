@@ -11,6 +11,7 @@ from time import gmtime, strftime
 import sqlite3 as sql
 import logging
 import os
+import re
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -34,6 +35,7 @@ class single_results_page():
     url = ""
 
     def __init__(self, file_path):
+        logger.info('Initialising single_results_page with {}'.format(file_path))
         self.file_path = file_path
         self.body = self.get_body()
         self.page_results = self.get_page_results()
@@ -56,6 +58,7 @@ class single_results_page():
         base_url = self.body.find("meta", {"property" : "og:url"}).get("content")
         full_name = os.path.basename(self.file_path)
         clean_name = os.path.splitext(full_name)[0]
+
         return("{}/{}".format(base_url, clean_name))
 
 class personal_result:
@@ -82,14 +85,17 @@ class personal_result:
     points = ""
     db_path = ""
     url = ""
+    bib_id = ""
+    in_base = ""
 
     def __init__(self, results_table_html, url, db_path):
+        logger.info('Initialising personal_result with results_table_html: {}, url: {}, db: {}'.format(results_table_html, url, db_path))
         self.results_raw = results_table_html
         self.db_path = db_path
         self.url = url
-        self.athlete_info = self.get_athlete_info()
 
     def extract_values(self):
+        self.athlete_info = self.get_athlete_info()
         self.name = self.get_name()
         self.partial_link = self.get_partial_link()
         self.country = self.get_country()
@@ -101,6 +107,8 @@ class personal_result:
         self.run = self.get_run()
         self.total = self.get_total()
         self.points = self.get_points()
+        self.bib_id = self.get_bib_id()
+        self.in_base = self.is_in_base()
 
 
     def get_athlete_info(self):
@@ -116,7 +124,7 @@ class personal_result:
         return(proper_name)
 
     def get_partial_link(self):
-        print(self.athlete_info)
+
         return(self.athlete_info[0].find_all("a")[0].get("href"))
 
     def get_country(self):
@@ -146,29 +154,46 @@ class personal_result:
     def get_points(self):
         return(self.athlete_info[9].text)
 
+    def get_bib_id(self):
+        return(re.search("(bidid=)(\d+)(&amp;|&)", self.partial_link).group(2))
+
     def insert_to_base(self):
         try:
             conn = sql.connect(self.db_path)
             c = conn.cursor()
             c.execute("""insert into race_times ('name', 'country', 'datetime', 'swim', 'bike', 'run', 
-                      'gen_rank', 'ovr_rank', 'div_rank', 'total', 'points', 'parent_url') values
+                      'gen_rank', 'ovr_rank', 'div_rank', 'total', 'points', 'parent_url', 'bib_id') values
                       (:name, :country, :datetime, :swim, :bike, :run, 
-                      :gen_rank, :ovr_rank, :div_rank, :total, :points, :parent_url);
+                      :gen_rank, :ovr_rank, :div_rank, :total, :points, :parent_url, :bib_id);
                       """,
                       {"name" : self.name, "country" : self.country, "datetime" : strftime("%Y-%m-%d %H:%M:%S", gmtime()),
                       "swim" : self.swim, "bike" : self.bike, "run" : self.run, 
                       "gen_rank" : self.gen_rank, "ovr_rank" : self.ovr_rank, "div_rank" : self.div_rank, 
-                      "total" : self.total, "points" : self.points, "parent_url" : self.url})
+                      "total" : self.total, "points" : self.points, "parent_url" : self.url,
+                      "bib_id" : self.bib_id})
             conn.commit()
             logger.info("SUCCESS: For url {} inserted {} to base".format(self.url, self.name))
-            print('good')
         except Exception as e:
             logger.error("FAILIURE: For url {} Failed to insert {}".format(self.url, self.name))
             print(e)
         finally:
             conn.close()
 
-
+    def is_in_base(self):
+        conn = sql.connect(self.db_path)
+        c = conn.cursor()
+        c.execute("""SELECT bib_id FROM race_times WHERE bib_id = :bib_id and parent_url = :parent_url;""",
+                  {"parent_url" : self.url, "bib_id" : self.bib_id})
+        conn.commit()
+        logger.info("SUCCESS: ".format(self.url, self.bib_id))
+        if c.fetchone() is None:
+            logger.info("Not in base bib: {} url: {}".format(self.bib_id, self.url))
+            qry_result = False
+        else:
+            logger.info("In base bib: {} url: {}".format(self.bib_id, self.url))
+            qry_result = True
+        conn.close()
+        return(qry_result)
 
 
 

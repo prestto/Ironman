@@ -254,10 +254,10 @@ class single_race:
 
 class race_parser(gen_parser):
 
-    output_folder = ""
+    # output_folder = ""
     articles = []
 
-    def __init__(self, web_url, output_folder, database_path):
+    def __init__(self, web_url, database_path):
         super().__init__(web_url, database_path)
         self.articles = self.get_atricles()
 

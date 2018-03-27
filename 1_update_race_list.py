@@ -1,8 +1,9 @@
+"""
+Process race home page ie. the list with all race links
+"""
+
 import logging
-# import importlib
 from site_scraping_classes import race_parser, single_race
-# import sqlite3 as sql
-# import re
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -21,17 +22,17 @@ def process_race_pages(web_url, db_path):
     initial race page is taken as an argument
     """
     race_page = race_parser(web_url, db_path)
-    print("Processing: {}".format(web_url))
+    logger.info("Processing: {}".format(web_url))
 
     for article in race_page.articles:
         summary_race_info = single_race(article, db_path)
-        print("race: {}".format(summary_race_info.title))
+        logger.info("race: {}".format(summary_race_info.title))
 
         if not summary_race_info.link_in_base():
-            print("inserting: {}".format(summary_race_info.title))
+            logger.info("inserting: {}".format(summary_race_info.title))
             summary_race_info.insert_to_base()
         else:
-            print("Already present in base {}".format(summary_race_info.title))
+            logger.info("Already present in base {}".format(summary_race_info.title))
 
     if race_page.get_next_page_link is not None:
         process_race_pages(race_page.next_page_link, db_path)
