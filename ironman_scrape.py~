@@ -1,9 +1,0 @@
-from bs4 import BeautifulSoup
-import requests
-import re
-
-base_page = "http://eu.ironman.com/triathlon/events/emea/ironman/france/results.aspx"
-
-var_path = "?ps=20#axzz53WFpM16u"
-
-current_path = base_path + var_path
