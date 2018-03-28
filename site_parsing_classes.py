@@ -23,29 +23,38 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
-class single_results_page():
-    """
-    fed a file path, this class prepares the html code stroed inside for processing
-    feeds the personal_result class
-    """ 
-    
-    file_path = ""
-    body = ""
-    page_results = ""
-    url = ""
 
+
+
+class gen_html_parser():
+    
+    body = ""
+    file_path = ""
+    
     def __init__(self, file_path):
-        logger.info('Initialising single_results_page with {}'.format(file_path))
         self.file_path = file_path
         self.body = self.get_body()
-        self.page_results = self.get_page_results()
-        self.url = self.get_url()
-
 
     def get_body(self):
         f = open(self.file_path, 'r')
 
         return(BeautifulSoup(f.read(), "lxml"))
+
+
+class single_results_page(gen_html_parser):
+    """
+    fed a file path, this class prepares the html code stroed inside for processing
+    feeds the personal_result class
+    """ 
+    
+    page_results = ""
+    url = ""
+
+    def __init__(self, file_path):
+        logger.info('Initialising single_results_page with {}'.format(file_path))
+        super.__init__(file_path)
+        self.page_results = self.get_page_results()
+        self.url = self.get_url()
 
     def get_page_results(self):
         event_results_page = self.body.find_all('table', id = "eventResults")
@@ -196,9 +205,52 @@ class personal_result:
         return(qry_result)
 
 
+class athlete_meta(gen_html_parser):
+    bib_id = ""
+    division = ""
+    age = ""
+    state = ""
+    country = ""
+    profession = ""
+    meta_table = ""
+    
 
+    def __init__(self, file_path):
+        super.__init__(file_path)
 
+    def get_meta_info(self):
+        main_table = self.body.find("div", {"class" : "moduleWrap eventResults resultsListing resultsListingDetails"})
+        general_table = main_table.find("table", {"id" : "general-info"})
 
+        return(general_table)
 
+    def get_bib_id(self):
+        label = general_table.find('td',text='BIB')
 
+        return(label.nextSibling.nextSibling.text)
+
+    def get_division(self):
+        label = general_table.find('td',text='Division')
+
+        return(label.nextSibling.nextSibling.text)
+
+    def get_age(self):
+        label = general_table.find('td',text='Age')
+
+        return(label.nextSibling.nextSibling.text)
+
+    def get_state(self):
+        label = general_table.find('td',text='State')
+
+        return(label.nextSibling.nextSibling.text)
+
+    def get_country(self):
+        label = general_table.find('td',text='Country')
+
+        return(label.nextSibling.nextSibling.text)
+
+    def get_profession(self):
+        label = general_table.find('td',text='Profession')
+        
+        return(label.nextSibling.nextSibling.text)
 
