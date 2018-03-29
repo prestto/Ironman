@@ -43,15 +43,6 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
 
-"""
-
-"""
-# def logit(my_function):
-#     def wrapper_function(*args, **kwargs):
-#         logger.info(locals())
-#         return(my_function(*args, **kwargs))
-#     return(wrapper_function)
-
 
 class gen_parser:
     """
@@ -117,6 +108,15 @@ class gen_parser:
         
         return(''.join(user))
 
+    def write_to_file(self):
+        try:
+            f = open(self.file_path, "w")
+            f.write(str(self.body))
+        except Exception as e:
+            logging.info("Could not print to file: {} error: {}".format(self.file_path, e))
+        else:
+            logging.info("Results written succesfully to: {}".format(self.file_path))
+
 class results_parser(gen_parser):
     """
     Parser specifically for the results pages
@@ -136,47 +136,49 @@ class results_parser(gen_parser):
 
     def check_page_type(self):
         if self.body.find("div", {"class" : "moduleWrap liveStream"}):
-            return("LIVE STREAM")
+            page_type = "LIVE STREAM"
         elif self.body.find("table", id = "eventResults"):
-            return("RESULTS")
+            page_type = "RESULTS"
+        elif self.body.find("div", {"class" : "moduleWrap eventResults resultsListing resultsListingDetails"}):
+            page_type = "META"
         else:
-            return("different...")
+            page_type = "OTHER"
+        return(page_type)
 
     def get_file_name(self):
-        try:
-            file_name = re.match("(?:.+aspx?)(.+)", self.web_url).group(1)
-        except:
-            file_name = re.sub("/", "-", self.web_url)
-        finally:
-            return(file_name)
+        file_name = re.sub("/", "-", self.web_url)
+        file_name = re.sub(":", "", file_name)
+
+        return(file_name)
 
     def get_full_path(self):
+
         return("{}/{}.html".format(self.output_folder, self.file_name))
-    
-    def write_to_file(self):
-        try:
-            f = open(self.file_path, "w")
-            f.write(str(self.body))
-        except Exception as e:
-            logging.info("Could not print to file: {} error: {}".format(self.file_path, e))
-        else:
-            logging.info("Results written succesfully to: {}".format(self.file_path))
 
     def insert_to_base(self):
         conn = sql.connect(self.database_path)
         c = conn.cursor()
-        c.execute("""insert into results_page ('link', 'datetime') values
-                  (:link, :datetime);
+        c.execute("""insert into scrape_details ('link', 'datetime', 'page_type') values
+                  (:link, :datetime, :page_type);
                   """,
-                  {"link" : self.web_url, "datetime" : strftime("%Y-%m-%d %H:%M:%S", gmtime())})
+                  {"link" : self.web_url, "datetime" : strftime("%Y-%m-%d %H:%M:%S", gmtime()),
+                  "page_type" : self.page_type})
         conn.commit()
         conn.close()
 
 
-
-
 class single_race:
+    """
+    This class technically parses a single race's information
 
+    Would it be better in the site_parsing_classes?  Probably not.  It's
+    here because it's quick to scrqpe race pages- there are only ~70, so it's
+    not really necessary to store this information- just insert straight into 
+    the base
+
+    As we don't store in .html it couldn't inherit from the gen_parser parent class,
+    so there should be no code duplication.
+    """
     atricle = ""
     link = ""
     title = ""
@@ -257,7 +259,7 @@ class race_parser(gen_parser):
     # output_folder = ""
     articles = []
 
-    def __init__(self, web_url, database_path):
+    def __init__(self, web_url, output_folder, database_path):
         super().__init__(web_url, database_path)
         self.articles = self.get_atricles()
 
@@ -267,8 +269,31 @@ class race_parser(gen_parser):
         return a list
         """
         return(self.body.find_all('article'))
-        
 
+# class single_meta(gen_parser):
+
+#     page_type = "META"
+#     file_name = ""
+
+#     def __init__(self, web_url, database_path):
+#         super().__init__(web_url, database_path)
+
+#     def file_name(self):
+#         file_name = re.sub("/", "-", self.web_url)
+#         file_name = re.sub(":", "", file_name)
+
+#         return("META {}".format(file_name))
+
+#     def insert_to_base(self):
+#         conn = sql.connect(self.database_path)
+#         c = conn.cursor()
+#         c.execute("""insert into scrape_details ('link', 'datetime', 'page_type') values
+#                   (:link, :datetime, :page_type);
+#                   """,
+#                   {"link" : self.web_url, "datetime" : strftime("%Y-%m-%d %H:%M:%S", gmtime()),
+#                   "page_type" : self.page_type})
+#         conn.commit()
+#         conn.close()
 
 
 
