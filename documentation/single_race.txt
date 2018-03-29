@@ -1,4 +1,4 @@
-Documentation for class single_race
+Documentation for class single_race 
 
 Class single_race
 Class designed to handle each article from a page of race listings

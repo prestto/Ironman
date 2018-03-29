@@ -1,0 +1,46 @@
+Documentation for class personal_result
+
+personal_result
+Fed from the class single_race_page.page_results, this extracts race times, nationality 
+and names from the table
+
+Variables:
+results_raw - the html row
+athlete_info - 
+name - athlete's name, if separated by a coma (Bones Jones, John), return John Bones Jones
+meta_link - the link to the athletes detail page (important for variables in analysis)
+country - athletes country of origin
+div_rank - rank for division (eg 1 is 1 for 25-29)
+gen_rank - rank based on sex
+ovr_rank - overall rank
+swim - swim time
+bike - bike time
+run - run time
+total - total time including transitions
+points - points towards ironman league
+db_path - path to database (arg)
+url - the url of the original page (arg)
+bib_id - bib id, useful as a race unique identifier (arg)
+
+Arguments:
+results_table_html - html from the single_race_page class
+url - url of original page
+db_path - database path
+
+Methods:
+insert_to_base - insert into the base
+is_in_base - check to see if the result is already in base, return bool
+
+Tutorial:
+html_page = "./page_contents/p=101&ps=20.html"
+
+# Obligatory first step
+results_page = single_results_page(html_page)
+
+# Loop the results_page.page_results
+for table_row in results_page.page_results:
+    athlete_results = personal_result(table_row, results_page.url, database_path)
+    athlete_results.extract_values()
+
+    if athlete_results.in_base == False:
+        athlete_results.insert_to_base()

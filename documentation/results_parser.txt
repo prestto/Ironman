@@ -15,3 +15,22 @@ get_full_path - An init method, combines the filename with output_folder - sets 
 
 get_next_page_link - get the url for the next results page 
 write_to_file - write the "body" to "file_path"
+
+Tutorial:
+
+# Set variables
+test_url = "http://eu.ironman.com/triathlon/events/emea/ironman/france/results.aspx#axzz5B4QZ4q6g"
+pages_dir = "./page_contents"
+db_path = "db_path = "./database/ironbase.db""
+
+# Scrape web page
+results_page = results_parser(url, pages_dir, db_path)
+
+# print variables if necessary
+print(results_page.file_name)
+print(results_page.file_path)
+print(results_page.output_folder)
+print(results_page.page_type)
+
+#Write result to file
+results_page.write_to_file()

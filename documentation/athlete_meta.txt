@@ -1,0 +1,45 @@
+Documentation for class athlete_meta
+
+Class athlete_meta
+The class results_parser is a class specificalls designed to save the results 
+from a results page in table format on the ironman website to an http file
+
+The athlete meta pages contain information on only one single athlete.  Thus only this class
+is necessary to process the results (as opposed to a page class and a result class with personal_result and single_results_page).
+
+Arguments:
+file_path - pqth to the file to be processed
+
+Variables:
+meta_table - html for the table containing meta info
+bib_id - race unique identifier
+division - athlete class eg 25-29 years of age
+age - age
+state - applicable in USA
+country - athlete home country
+profession - athlete profession
+
+Methods:
+set_variables: set all variables
+link_in_base: is the link in the ironbase.db?  returns a boolean
+insert_to_base: insert the variables to the ironbase.db
+
+Tutorial:
+# Set variables
+page = "./page_contents/meta/http--eu.ironman.com-triathlon-coverage-athlete-tracker.aspx-?rd=20130623&race=france&bidid=1851&detail=1.html"
+
+# Instantiate class
+meta = athlete_meta(page)
+
+# Set all variables
+meta.set_variables()
+
+# Check out information stored
+print(meta.bib_id)
+print(meta.division)
+print(meta.age)
+print(meta.state)
+print(meta.country)
+print(meta.profession)
+
+# If necessary, insert to base

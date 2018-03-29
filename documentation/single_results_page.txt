@@ -1,0 +1,24 @@
+Documentation for class single_results_page
+
+single_results_page
+Used to processes a results page stored as an html file.  The page_results returns the event 
+results table, which can be fed to personal_result to process individual performances one 
+at a time.
+
+Variables:
+page_results - list of rows from the eventResults table
+url - url was not stored with file, so it has been created from information in the body
+
+Arguments:
+file_path - the path of the file to process
+
+Methods:
+get_page_results - retrn the eventResults table from the body
+get_url - extract full url from the body
+
+Tutorial:
+results_page = single_results_page(html_page)
+
+print(results_page.body)
+print(results_page.url)
+print(results_page.page_results)
