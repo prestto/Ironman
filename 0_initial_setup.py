@@ -83,7 +83,7 @@ create_links_qry = """CREATE TABLE IF NOT EXISTS link_page (
                 format NVARCHAR(50)
                 );"""
 
-create_scrape_details = """CREATE TABLE IF NOT EXISTS scrape_details (
+create_scrape_details = """CREATE TABLE IF NOT EXISTS scrape_page (
                 id integer primary key,
                 link NVARCHAR(200),
                 datetime text,
