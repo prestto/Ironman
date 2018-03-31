@@ -20,7 +20,7 @@ There are only 63 race pages, this will be efficient, and not add too much to st
 to reprocess.
 it would not be great to scrape every race if a single detail was missed on each page.
 
-"""
+""" 
 
 from bs4 import BeautifulSoup
 import requests
@@ -259,7 +259,7 @@ class race_parser(gen_parser):
     # output_folder = ""
     articles = []
 
-    def __init__(self, web_url, output_folder, database_path):
+    def __init__(self, web_url, database_path):
         super().__init__(web_url, database_path)
         self.articles = self.get_atricles()
 
