@@ -27,7 +27,7 @@ def check_folder_existance(folder_path, create_if_absent):
     # Option to create a folder if needed
     if os.path.isdir(folder_path):
         print("Good news: Folder {} is present".format(folder_path))
-    elif os.path.isdir(folder_path) & create_if_absent == True:
+    elif not (os.path.isdir(folder_path)) & create_if_absent == True:
         print("Folder {} not present, creating...")
         try:
             os.mkdir(folder_path)
