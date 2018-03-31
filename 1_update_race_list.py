@@ -31,10 +31,12 @@ def process_race_pages(web_url, db_path):
 
         if not summary_race_info.link_in_base():
             logger.info("inserting: {}".format(summary_race_info.title))
+            print("inserting: {}".format(summary_race_info.title))
             summary_race_info.insert_to_base()
 
         else:
             logger.info("Already present in base {}".format(summary_race_info.title))
+            print("Already present in base {}".format(summary_race_info.title))
 
     if race_page.get_next_page_link is not None:
         process_race_pages(race_page.next_page_link, db_path)
@@ -43,4 +45,5 @@ def process_race_pages(web_url, db_path):
 parent_page = "http://eu.ironman.com/triathlon/coverage/past.aspx#axzz59wPZrEd1"
 db_path = "./database/ironbase.db"
 
-process_race_pages(parent_page, db_path)
+process_race_pages(parent_page, db_path) 
+web_url, output_folder, database_path
