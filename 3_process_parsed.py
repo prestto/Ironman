@@ -44,7 +44,10 @@ def update_athlete_info(pages_to_parse):
     # for each athlete on each page, if they are not already in 
     # the base, insert them.
     for html_page in pages_to_parse:
-        results_page = single_results_page(html_page)
+        try:
+            results_page = single_results_page(html_page)
+        except:
+            print("unable to parse file: {}".format(html_page))
 
     for table_row in results_page.page_results:
         print("processing {}".format(results_page.url))
