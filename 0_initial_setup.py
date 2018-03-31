@@ -38,7 +38,9 @@ def check_folder_existance(folder_path, create_if_absent):
 
 check_folder_existance('./database', True)
 check_folder_existance('./documentation', False)
-check_folder_existance('./database', True)
+check_folder_existance('./page_contents', True)
+check_folder_existance('./page_contents/meta', True)
+
 
 # Check database existance
 # If does not exit, create the tables one by one
