@@ -5,9 +5,10 @@ Loop recursively through all pages containing races.
 
 Details of each race are scraped then parsed immediately
 html not stored as:
-- there are only 70 pages of races
+- there are only 70 pages of races, this can be scraped again quickly
 - the races per page will change as new races are added
 """
+
 import logging
 from site_scraping_classes import race_parser, single_race
 
