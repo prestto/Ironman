@@ -1,0 +1,136 @@
+2018-05-13 22:25:50,528 - __main__ - INFO - Processing: http://eu.ironman.com/triathlon/coverage/past.aspx#axzz59wPZrEd1
+2018-05-13 22:25:50,562 - __main__ - INFO - race: IRONMAN 70.3 Pays d'Aix
+2018-05-13 22:25:50,564 - __main__ - INFO - inserting: IRONMAN 70.3 Pays d'Aix
+2018-05-13 22:25:50,568 - __main__ - INFO - race: IRONMAN 70.3 Vietnam
+2018-05-13 22:25:50,569 - __main__ - INFO - inserting: IRONMAN 70.3 Vietnam
+2018-05-13 22:25:50,572 - __main__ - INFO - race: IRONMAN 70.3 Mallorca
+2018-05-13 22:25:50,573 - __main__ - INFO - inserting: IRONMAN 70.3 Mallorca
+2018-05-13 22:25:50,576 - __main__ - INFO - race: IRONMAN Santa Rosa
+2018-05-13 22:25:50,577 - __main__ - INFO - inserting: IRONMAN Santa Rosa
+2018-05-13 22:25:50,580 - __main__ - INFO - race: IRONMAN 70.3 Gulf Coast
+2018-05-13 22:25:50,580 - __main__ - INFO - inserting: IRONMAN 70.3 Gulf Coast
+2018-05-13 22:25:50,583 - __main__ - INFO - race: IRONMAN Australia
+2018-05-13 22:25:50,584 - __main__ - INFO - inserting: IRONMAN Australia
+2018-05-13 22:25:50,587 - __main__ - INFO - race: IRONMAN 70.3 Busselton
+2018-05-13 22:25:50,588 - __main__ - INFO - inserting: IRONMAN 70.3 Busselton
+2018-05-13 22:25:50,590 - __main__ - INFO - race: IRONMAN 70.3 Port Macquarie
+2018-05-13 22:25:50,591 - __main__ - INFO - inserting: IRONMAN 70.3 Port Macquarie
+2018-05-13 22:25:50,593 - __main__ - INFO - race: IRONMAN 70.3 St. George
+2018-05-13 22:25:50,594 - __main__ - INFO - inserting: IRONMAN 70.3 St. George
+2018-05-13 22:25:50,596 - __main__ - INFO - race: IRONMAN 70.3 Marbella
+2018-05-13 22:25:50,597 - __main__ - INFO - inserting: IRONMAN 70.3 Marbella
+2018-05-13 22:25:50,599 - __main__ - INFO - race: IRONMAN North American Championship
+2018-05-13 22:25:50,600 - __main__ - INFO - inserting: IRONMAN North American Championship
+2018-05-13 22:25:50,604 - __main__ - INFO - race: IRONMAN 70.3 Florianopolis
+2018-05-13 22:25:50,605 - __main__ - INFO - inserting: IRONMAN 70.3 Florianopolis
+2018-05-13 22:25:50,607 - __main__ - INFO - race: IRONMAN 70.3 Peru
+2018-05-13 22:25:50,608 - __main__ - INFO - inserting: IRONMAN 70.3 Peru
+2018-05-13 22:25:50,610 - __main__ - INFO - race: IRONMAN African Championship South Africa
+2018-05-13 22:25:50,611 - __main__ - INFO - inserting: IRONMAN African Championship South Africa
+2018-05-13 22:25:50,614 - __main__ - INFO - race: IRONMAN 70.3 Liuzhou
+2018-05-13 22:25:50,615 - __main__ - INFO - inserting: IRONMAN 70.3 Liuzhou
+2018-05-13 22:25:57,136 - __main__ - INFO - Processing: http://eu.ironman.com/triathlon/coverage/past.aspx?p=2
+2018-05-13 22:25:57,137 - __main__ - INFO - race: IRONMAN 70.3 Texas
+2018-05-13 22:25:57,139 - __main__ - INFO - inserting: IRONMAN 70.3 Texas
+2018-05-13 22:25:57,144 - __main__ - INFO - race: IRONMAN 70.3 Punta del Este
+2018-05-13 22:25:57,146 - __main__ - INFO - inserting: IRONMAN 70.3 Punta del Este
+2018-05-13 22:25:57,148 - __main__ - INFO - race: IRONMAN 70.3 Florida
+2018-05-13 22:25:57,149 - __main__ - INFO - inserting: IRONMAN 70.3 Florida
+2018-05-13 22:25:57,152 - __main__ - INFO - race: IRONMAN 70.3 Oceanside
+2018-05-13 22:25:57,153 - __main__ - INFO - inserting: IRONMAN 70.3 Oceanside
+2018-05-13 22:25:57,156 - __main__ - INFO - race: IRONMAN 70.3 Davao Philippines
+2018-05-13 22:25:57,157 - __main__ - INFO - Already present in base IRONMAN 70.3 Davao Philippines
+2018-05-13 22:25:57,157 - __main__ - INFO - race: IRONMAN 70.3 Campeche
+2018-05-13 22:25:57,158 - __main__ - INFO - Already present in base IRONMAN 70.3 Campeche
+2018-05-13 22:25:57,159 - __main__ - INFO - race: IRONMAN 70.3 Puerto Rico
+2018-05-13 22:25:57,160 - __main__ - INFO - Already present in base IRONMAN 70.3 Puerto Rico
+2018-05-13 22:25:57,161 - __main__ - INFO - race: IRONMAN 70.3 Taiwan
+2018-05-13 22:25:57,161 - __main__ - INFO - Already present in base IRONMAN 70.3 Taiwan
+2018-05-13 22:25:57,162 - __main__ - INFO - race: IRONMAN 70.3 Bariloche
+2018-05-13 22:25:57,163 - __main__ - INFO - Already present in base IRONMAN 70.3 Bariloche
+2018-05-13 22:25:57,164 - __main__ - INFO - race: IRONMAN 70.3 New Zealand
+2018-05-13 22:25:57,165 - __main__ - INFO - Already present in base IRONMAN 70.3 New Zealand
+2018-05-13 22:25:57,165 - __main__ - INFO - race: IRONMAN New Zealand
+2018-05-13 22:25:57,166 - __main__ - INFO - Already present in base IRONMAN New Zealand
+2018-05-13 22:25:57,167 - __main__ - INFO - race: IRONMAN 70.3 Colombo
+2018-05-13 22:25:57,168 - __main__ - INFO - Already present in base IRONMAN 70.3 Colombo
+2018-05-13 22:25:57,169 - __main__ - INFO - race: IRONMAN 70.3 Geelong
+2018-05-13 22:25:57,169 - __main__ - INFO - Already present in base IRONMAN 70.3 Geelong
+2018-05-13 22:25:57,170 - __main__ - INFO - race: IRONMAN 70.3 Dubai
+2018-05-13 22:25:57,171 - __main__ - INFO - Already present in base IRONMAN 70.3 Dubai
+2018-05-13 22:25:57,172 - __main__ - INFO - race: IRONMAN 70.3 South Africa
+2018-05-13 22:25:57,172 - __main__ - INFO - Already present in base IRONMAN 70.3 South Africa
+2018-05-13 22:26:00,847 - __main__ - INFO - Processing: http://eu.ironman.com/triathlon/coverage/past.aspx?p=3
+2018-05-13 22:26:00,848 - __main__ - INFO - race: IRONMAN 70.3 Pucon 
+2018-05-13 22:26:00,850 - __main__ - INFO - Already present in base IRONMAN 70.3 Pucon 
+2018-05-13 22:26:00,852 - __main__ - INFO - race: IRONMAN 70.3 Taupo
+2018-05-13 22:26:00,853 - __main__ - INFO - Already present in base IRONMAN 70.3 Taupo
+2018-05-13 22:26:00,854 - __main__ - INFO - race: IRONMAN Western Australia
+2018-05-13 22:26:00,856 - __main__ - INFO - Already present in base IRONMAN Western Australia
+2018-05-13 22:26:00,857 - __main__ - INFO - race: IRONMAN South American Championship
+2018-05-13 22:26:00,858 - __main__ - INFO - Already present in base IRONMAN South American Championship
+2018-05-13 22:26:00,859 - __main__ - INFO - race: IRONMAN 70.3 Cartagena
+2018-05-13 22:26:00,860 - __main__ - INFO - Already present in base IRONMAN 70.3 Cartagena
+2018-05-13 22:26:00,861 - __main__ - INFO - race: IRONMAN 70.3 Western Australia
+2018-05-13 22:26:00,862 - __main__ - INFO - Already present in base IRONMAN 70.3 Western Australia
+2018-05-13 22:26:00,863 - __main__ - INFO - race: IRONMAN Cozumel
+2018-05-13 22:26:00,864 - __main__ - INFO - Already present in base IRONMAN Cozumel
+2018-05-13 22:26:00,864 - __main__ - INFO - race: IRONMAN 70.3 Punta del Este
+2018-05-13 22:26:00,865 - __main__ - INFO - Already present in base IRONMAN 70.3 Punta del Este
+2018-05-13 22:26:00,866 - __main__ - INFO - race: IRONMAN 70.3 Western Sydney
+2018-05-13 22:26:00,867 - __main__ - INFO - Already present in base IRONMAN 70.3 Western Sydney
+2018-05-13 22:26:00,867 - __main__ - INFO - race: IRONMAN 70.3 Thailand
+2018-05-13 22:26:00,868 - __main__ - INFO - Already present in base IRONMAN 70.3 Thailand
+2018-05-13 22:26:00,869 - __main__ - INFO - race: IRONMAN 70.3 Fortaleza
+2018-05-13 22:26:00,870 - __main__ - INFO - Already present in base IRONMAN 70.3 Fortaleza
+2018-05-13 22:26:00,870 - __main__ - INFO - race: IRONMAN 70.3 Middle East Championship Bahrain
+2018-05-13 22:26:00,871 - __main__ - INFO - Already present in base IRONMAN 70.3 Middle East Championship Bahrain
+2018-05-13 22:26:00,872 - __main__ - INFO - race: IRONMAN Arizona
+2018-05-13 22:26:00,873 - __main__ - INFO - Already present in base IRONMAN Arizona
+2018-05-13 22:26:00,873 - __main__ - INFO - race: IRONMAN Los Cabos
+2018-05-13 22:26:00,874 - __main__ - INFO - Already present in base IRONMAN Los Cabos
+2018-05-13 22:26:00,875 - __main__ - INFO - race: IRONMAN 70.3 Xiamen
+2018-05-13 22:26:00,876 - __main__ - INFO - Already present in base IRONMAN 70.3 Xiamen
+2018-05-13 22:26:05,210 - __main__ - INFO - Processing: http://eu.ironman.com/triathlon/coverage/past.aspx?p=4
+2018-05-13 22:26:05,211 - __main__ - INFO - race: IRONMAN 70.3 Los Cabos
+2018-05-13 22:26:05,213 - __main__ - INFO - Already present in base IRONMAN 70.3 Los Cabos
+2018-05-13 22:26:05,215 - __main__ - INFO - race: IRONMAN Malaysia
+2018-05-13 22:26:05,216 - __main__ - INFO - Already present in base IRONMAN Malaysia
+2018-05-13 22:26:05,217 - __main__ - INFO - race: IRONMAN 70.3 Langkawi
+2018-05-13 22:26:05,219 - __main__ - INFO - Already present in base IRONMAN 70.3 Langkawi
+2018-05-13 22:26:05,220 - __main__ - INFO - race: IRONMAN Florida
+2018-05-13 22:26:05,221 - __main__ - INFO - Already present in base IRONMAN Florida
+2018-05-13 22:26:05,222 - __main__ - INFO - race: IRONMAN 70.3 Austin
+2018-05-13 22:26:05,223 - __main__ - INFO - Already present in base IRONMAN 70.3 Austin
+2018-05-13 22:26:05,224 - __main__ - INFO - race: IRONMAN 70.3 Waco
+2018-05-13 22:26:05,225 - __main__ - INFO - Already present in base IRONMAN 70.3 Waco
+2018-05-13 22:26:05,226 - __main__ - INFO - race: IRONMAN 70.3 Miami
+2018-05-13 22:26:05,227 - __main__ - INFO - Already present in base IRONMAN 70.3 Miami
+2018-05-13 22:26:05,228 - __main__ - INFO - race: IRONMAN 70.3 New Orleans
+2018-05-13 22:26:05,228 - __main__ - INFO - Already present in base IRONMAN 70.3 New Orleans
+2018-05-13 22:26:05,229 - __main__ - INFO - race: IRONMAN 70.3 Arizona
+2018-05-13 22:26:05,230 - __main__ - INFO - Already present in base IRONMAN 70.3 Arizona
+2018-05-13 22:26:05,231 - __main__ - INFO - race: IRONMAN 70.3 Coquimbo
+2018-05-13 22:26:05,231 - __main__ - INFO - Already present in base IRONMAN 70.3 Coquimbo
+2018-05-13 22:26:05,232 - __main__ - INFO - race: IRONMAN 70.3 North Carolina
+2018-05-13 22:26:05,233 - __main__ - INFO - Already present in base IRONMAN 70.3 North Carolina
+2018-05-13 22:26:05,234 - __main__ - INFO - race: IRONMAN 70.3 Turkey
+2018-05-13 22:26:05,235 - __main__ - INFO - Already present in base IRONMAN 70.3 Turkey
+2018-05-13 22:26:05,235 - __main__ - INFO - race: IRONMAN Louisville
+2018-05-13 22:26:05,236 - __main__ - INFO - Already present in base IRONMAN Louisville
+2018-05-13 22:26:05,237 - __main__ - INFO - race: IRONMAN World Championship
+2018-05-13 22:26:05,238 - __main__ - INFO - Already present in base IRONMAN World Championship
+2018-05-13 22:26:05,238 - __main__ - INFO - race: IRONMAN Maryland
+2018-05-13 22:26:05,239 - __main__ - INFO - Already present in base IRONMAN Maryland
+2018-05-13 22:26:14,928 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/events/emea/ironman/france/results.aspx?rd=20130623
+2018-05-13 22:26:21,084 - __main__ - INFO - Writing to file: http--eu.ironman.com-triathlon-events-emea-ironman-france-results.aspx?rd=20130623
+2018-05-13 22:26:21,114 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/events/emea/ironman/france/results.aspx?p=2&rd=20130623&ps=20
+2018-05-13 22:26:29,956 - __main__ - INFO - Writing to file: http--eu.ironman.com-triathlon-events-emea-ironman-france-results.aspx?p=2&rd=20130623&ps=20
+2018-05-13 22:26:29,986 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/events/emea/ironman/france/results.aspx?p=3&rd=20130623&ps=20
+2018-05-13 22:26:42,158 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/coverage/athlete-tracker.aspx/?y=2005&rd=20050618&race=france&bidid=1366&detail=1
+2018-05-13 22:26:47,125 - __main__ - INFO - Writing to file: http--eu.ironman.com-triathlon-coverage-athlete-tracker.aspx-?y=2005&rd=20050618&race=france&bidid=1366&detail=1
+2018-05-13 22:26:47,144 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/coverage/athlete-tracker.aspx/?y=2005&rd=20050618&race=france&bidid=1077&detail=1
+2018-05-13 22:26:51,930 - __main__ - INFO - Writing to file: http--eu.ironman.com-triathlon-coverage-athlete-tracker.aspx-?y=2005&rd=20050618&race=france&bidid=1077&detail=1
+2018-05-13 22:26:51,950 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/coverage/athlete-tracker.aspx/?y=2005&rd=20050618&race=france&bidid=641&detail=1
+2018-05-13 22:26:58,245 - __main__ - INFO - Writing to file: http--eu.ironman.com-triathlon-coverage-athlete-tracker.aspx-?y=2005&rd=20050618&race=france&bidid=641&detail=1
+2018-05-13 22:26:58,260 - __main__ - INFO - Processing page: http://eu.ironman.com/triathlon/coverage/athlete-tracker.aspx/?y=2005&rd=20050618&race=france&bidid=1059&detail=1
