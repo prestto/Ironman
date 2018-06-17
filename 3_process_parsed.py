@@ -46,19 +46,33 @@ def update_athlete_info(pages_to_parse):
     for html_page in pages_to_parse:
         try:
             results_page = single_results_page(html_page)
-        except:
+            parse_page(results_page)
+
+        except Exception as e:
+            print(e)
             print("unable to parse file: {}".format(html_page))
 
+def parse_page(results_page):
     for table_row in results_page.page_results:
         print("processing {}".format(results_page.url))
         try:
-            athlete_results = personal_result(table_row, results_page.url, database_path)
+            print("assigning athlete results: ")
+            # print(table_row)
+            # print(results_page.url)
+            # print(database_path)
+            # print(results_page.link_id)
+            athlete_results = personal_result(table_row, results_page.url, database_path, results_page.link_page_id)
+            
+            print("extracting values")
             athlete_results.extract_values()
-
+            print("extracted values")
             if athlete_results.in_base == False:
                 athlete_results.insert_to_base()
+                print("inserting athlete to base")
+            else:
+                print("athlete already in base")
         except:
-            print("unable to parse file: {}".format(results_page.url))
+            print("unable to parse athlete: {}".format(results_page.url))
 
 update_athlete_info(pages_to_parse)
 

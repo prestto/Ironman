@@ -58,8 +58,6 @@ def process_results_pages(web_url, output_folder, database_path):
     logger.info("Processing page: {}".format(web_url))
     results_page = results_parser(web_url, output_folder, database_path)
 
-    print(results_page.page_type)
-
     logger.info("Writing to file: {}".format(results_page.file_name))
     results_page.write_to_file()
 
