@@ -94,6 +94,7 @@ create_scrape_details = """CREATE TABLE IF NOT EXISTS scrape_page (
 
 create_race_times = """CREATE TABLE IF NOT EXISTS race_times (
               id integer primary key,
+              foreign key(race_id) references links_page(link),
               name NVARCHAR(100), 
               bib_id NVARCHAR(100),
               country NVARCHAR(100), 
